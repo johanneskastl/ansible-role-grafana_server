@@ -1,0 +1,7 @@
+---
+# grafana_server/handlers/main.yml
+
+- name: 'Restart the grafana service'
+  ansible.builtin.service:
+    name: "{{ systemd_unit_name }}"
+    state: 'restarted'
