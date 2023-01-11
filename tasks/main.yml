@@ -9,7 +9,7 @@
     name: "{{ grafana_package_name }}"
     state: 'present'
 
-- name: 'Create the configuration file'
+- name: 'Create the grafana.ini configuration file'
   ansible.builtin.template:
     src: 'grafana.ini.j2'
     dest: '/etc/grafana/grafana.ini'
@@ -18,6 +18,18 @@
     mode: '0640'
   when:
     - 'write_grafana_ini | bool'
+  notify:
+    - 'Restart the grafana service'
+
+- name: 'Create the ldap.toml configuration file'
+  ansible.builtin.template:
+    src: 'ldap.toml.j2'
+    dest: '/etc/grafana/ldap.toml'
+    owner: 'root'
+    group: "{{ grafana_system_group }}"
+    mode: '0640'
+  when:
+    - 'write_ldap_toml | bool'
   notify:
     - 'Restart the grafana service'
 
