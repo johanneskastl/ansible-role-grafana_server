@@ -1,0 +1,16 @@
+---
+# grafana_server/tasks/main.yml
+
+- name: 'Populate the package name variable depending on the OS'
+  ansible.builtin.include_tasks: package_name.yml
+
+- name: 'Install the package'
+  ansible.builtin.package:
+    name: "{{ grafana_package_name }}"
+    state: 'present'
+
+- name: 'Start and enable the service'
+  ansible.builtin.service:
+    name: "{{ systemd_unit_name }}"
+    state: 'started'
+    enabled: 'true'
