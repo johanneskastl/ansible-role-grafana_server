@@ -14,7 +14,7 @@
     src: 'grafana.ini.j2'
     dest: '/etc/grafana/grafana.ini'
     owner: 'root'
-    group: 'root'
+    group: "{{ grafana_system_group }}"
     mode: '0640'
   notify:
     - 'Restart the grafana service'
