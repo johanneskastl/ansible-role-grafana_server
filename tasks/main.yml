@@ -9,6 +9,16 @@
     name: "{{ grafana_package_name }}"
     state: 'present'
 
+- name: 'Create the configuration file'
+  ansible.builtin.template:
+    src: 'grafana.ini.j2'
+    dest: '/etc/grafana/grafana.ini'
+    owner: 'root'
+    group: 'root'
+    mode: '0640'
+  notify:
+    - 'Restart the grafana service'
+
 - name: 'Start and enable the service'
   ansible.builtin.service:
     name: "{{ systemd_unit_name }}"
