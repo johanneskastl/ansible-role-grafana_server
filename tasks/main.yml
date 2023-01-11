@@ -16,6 +16,8 @@
     owner: 'root'
     group: "{{ grafana_system_group }}"
     mode: '0640'
+  when:
+    - 'write_grafana_ini | bool'
   notify:
     - 'Restart the grafana service'
 
