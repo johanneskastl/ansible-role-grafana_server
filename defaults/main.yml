@@ -5,3 +5,6 @@ systemd_unit_name: 'grafana-server.service'
 
 grafana_system_user: 'grafana'
 grafana_system_group: 'grafana'
+
+# Should this role write the grafana.ini configuration file?
+write_grafana_ini: true
