@@ -3,4 +3,5 @@
 
 systemd_unit_name: 'grafana-server.service'
 
+grafana_system_user: 'grafana'
 grafana_system_group: 'grafana'
