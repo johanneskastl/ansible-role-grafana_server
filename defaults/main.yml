@@ -2,3 +2,5 @@
 # grafana_server/defaults/main.yml
 
 systemd_unit_name: 'grafana-server.service'
+
+grafana_system_group: 'grafana'
