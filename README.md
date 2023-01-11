@@ -13,7 +13,9 @@ None.
 Role Variables
 --------------
 
-None.
+**Default values**
+- `systemd_unit_name`: name of the systemd unit for the grafana server, defaults to `grafana-server.service`
+- `grafana_system_group`: name of the system group for grafana, defaults to `grafana`
 
 Dependencies
 ------------
