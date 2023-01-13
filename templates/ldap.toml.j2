@@ -75,5 +75,5 @@ org_role = "Editor"
 
 [[servers.group_mappings]]
 # If you want to match all (or no ldap groups) then you can use wildcard
-group_dn = "*"
+group_dn = "{{ ldap_viewer_group_dn }}"
 org_role = "Viewer"
