@@ -22,7 +22,6 @@ Role Variables
 **Role behaviour**
 
 - `write_grafana_ini`: Boolean that decides if this roles writes the `grafana.ini` configuration file (default: `true`)
-- `write_ldap_toml`: Boolean that decides if this roles writes the `ldap.toml` configuration file (default: `true`)
 
 **TLS settings**
 

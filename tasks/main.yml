@@ -43,7 +43,7 @@
     group: "{{ grafana_system_group }}"
     mode: '0640'
   when:
-    - 'write_ldap_toml | bool'
+    - 'enable_ldap | bool'
   notify:
     - 'Restart the grafana service'
 

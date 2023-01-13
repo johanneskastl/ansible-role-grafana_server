@@ -8,8 +8,6 @@ grafana_system_group: 'grafana'
 
 # Should this role write the grafana.ini configuration file?
 write_grafana_ini: true
-# Should this role write the ldap.toml configuration file?
-write_ldap_toml: true
 
 #
 enable_tls: false
