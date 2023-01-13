@@ -67,7 +67,7 @@ org_role = "Admin"
 # To make user an instance admin  (Grafana Admin) uncomment line below
 grafana_admin = {{ ldap_admin_group_make_grafana_admin }}
 # The Grafana organization database id, optional, if left out the default org (id 1) will be used
-# org_id = 1
+org_id = {{ ldap_admin_group_org_id }}
 
 [[servers.group_mappings]]
 group_dn = "cn=users,ou=groups,dc=grafana,dc=org"
