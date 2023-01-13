@@ -17,7 +17,11 @@ start_tls = {{ ldap_server_start_tls }}
 # set to true if you want to skip ssl cert validation
 ssl_skip_verify = {{ ldap_server_skip_ssl_verify }}
 # set to the path to your root CA certificate or leave unset to use system defaults
+{% if ldap_server_root_ca_cert_path is defined %}
+root_ca_cert = "{{ ldap_server_root_ca_cert_path }}"
+{% else %}
 # root_ca_cert = "/path/to/certificate.crt"
+{% endif %}
 # Authentication against LDAP servers requiring client certificates
 # client_cert = "/path/to/client.crt"
 # client_key = "/path/to/client.key"
