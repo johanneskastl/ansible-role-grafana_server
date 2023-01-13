@@ -33,6 +33,10 @@ If TLS is to be enabled, you need to set the following variables:
 - `tls_certificate_crt_path`: path to the TLS certificate's crt file
 - `tls_certificate_key_path`: path to the TLS certificate's key file
 
+**LDAP settings**
+
+- `enable_ldap`: Boolean that decides if LDAP authentication should be enabled (Default: `false`)
+
 Dependencies
 ------------
 
