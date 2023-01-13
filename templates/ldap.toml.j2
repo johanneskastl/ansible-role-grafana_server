@@ -54,11 +54,11 @@ search_base_dns = ["{{ ldap_search_base_dns }}"]
 
 # Specify names of the ldap attributes your ldap uses
 [servers.attributes]
-name = "givenName"
-surname = "sn"
-username = "cn"
-member_of = "memberOf"
-email =  "email"
+name = "{{ ldap_attributes_name }}"
+surname = "{{ ldap_attributes_surname }}"
+username = "{{ ldap_attributes_username }}"
+member_of = "{{ ldap_attributes_memberof }}"
+email =  "{{ ldap_attributes_email }}"
 
 # Map ldap groups to grafana org roles
 [[servers.group_mappings]]
