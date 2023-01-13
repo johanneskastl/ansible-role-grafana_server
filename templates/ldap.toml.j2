@@ -70,7 +70,7 @@ grafana_admin = {{ ldap_admin_group_make_grafana_admin }}
 org_id = {{ ldap_admin_group_org_id }}
 
 [[servers.group_mappings]]
-group_dn = "cn=users,ou=groups,dc=grafana,dc=org"
+group_dn = "{{ ldap_editor_group_dn }}"
 org_role = "Editor"
 
 [[servers.group_mappings]]
