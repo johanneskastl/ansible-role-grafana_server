@@ -24,6 +24,15 @@ Role Variables
 - `write_grafana_ini`: Boolean that decides if this roles writes the `grafana.ini` configuration file (default: `true`)
 - `write_ldap_toml`: Boolean that decides if this roles writes the `ldap.toml` configuration file (default: `true`)
 
+**TLS settings**
+
+- `enable_tls`: Boolean that decides if TLS/ HTTPS should be enabled (Default: `false`)
+
+If TLS is to be enabled, you need to set the following variables:
+
+- `tls_certificate_crt_path`: path to the TLS certificate's crt file
+- `tls_certificate_key_path`: path to the TLS certificate's key file
+
 Dependencies
 ------------
 
