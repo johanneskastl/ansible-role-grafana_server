@@ -600,9 +600,15 @@ cert_key = {{ tls_certificate_key_path }}
 
 #################################### Auth LDAP ##########################
 [auth.ldap]
+{% if enable_ldap | bool %}
+enabled = true
+config_file = {{ path_to_ldap_toml }}
+allow_sign_up = {{ ldap_allow_sign_up }}
+{% else %}
 ;enabled = false
 ;config_file = /etc/grafana/ldap.toml
 ;allow_sign_up = true
+{% endif %}
 
 # LDAP background sync (Enterprise only)
 # At 1 am every day
