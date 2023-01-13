@@ -65,7 +65,7 @@ email =  "{{ ldap_attributes_email }}"
 group_dn = "{{ ldap_admin_group_dn }}"
 org_role = "Admin"
 # To make user an instance admin  (Grafana Admin) uncomment line below
-# grafana_admin = true
+grafana_admin = {{ ldap_admin_group_make_grafana_admin }}
 # The Grafana organization database id, optional, if left out the default org (id 1) will be used
 # org_id = 1
 
