@@ -79,9 +79,38 @@ None
 Example Playbook
 ----------------
 
-    - hosts: servers
+    - hosts: grafana-server01
       roles:
         - role: 'johanneskastl.grafana_server'
+
+Example Playbook using TLS
+----------------
+
+    - hosts: grafana-server01
+      roles:
+        - role: 'johanneskastl.grafana_server'
+          enable_tls: true
+          tls_certificate_crt_path: '/etc/ssl/my_server.crt'
+          tls_certificate_key_path: '/etc/ssl/my_server.key'
+
+Example Playbook using LDAP and TLS)
+----------------
+
+    - hosts: grafana-server01
+      roles:
+        - role: 'johanneskastl.grafana_server'
+          enable_tls: true
+          tls_certificate_crt_path: '/etc/ssl/my_server.crt'
+          tls_certificate_key_path: '/etc/ssl/my_server.key'
+          enable_ldap: true
+          ldap_server_url: ldap.example.org
+          ldap_server_port: 389
+          ldap_server_start_tls: 'true'
+          ldap_bind_dn: 'johndoe'
+          ldap_bind_password: 'super_secret' # should not be defined here, rather in a separate file encrypted with Ansible vault
+          ldap_search_base_dns: 'dc=example,dc=org'
+          ldap_admin_group_dn: 'cn=grafana_admins,ou=groups,dc=example,dc=org'
+          ldap_editors_group_dn: 'cn=grafana_users,ou=groups,dc=example,dc=org'
 
 License
 -------
