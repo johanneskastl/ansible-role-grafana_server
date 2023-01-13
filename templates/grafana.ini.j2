@@ -48,7 +48,7 @@ protocol = https
 ;http_port = 3000
 
 # The public facing domain name used to access grafana from a browser
-;domain = localhost
+domain = {{ hostvars[inventory_hostname]['ansible_fqdn'] }}
 
 # Redirect to correct domain if host header does not match domain
 # Prevents DNS rebinding attacks
