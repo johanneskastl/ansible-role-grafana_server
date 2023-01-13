@@ -23,7 +23,11 @@ root_ca_cert = "{{ ldap_server_root_ca_cert_path }}"
 # root_ca_cert = "/path/to/certificate.crt"
 {% endif %}
 # Authentication against LDAP servers requiring client certificates
+{% if ldap_server_client_certificate_crt_path is defined %}
+client_cert = "{{ ldap_server_client_certificate_crt_path }}"
+{% else %}
 # client_cert = "/path/to/client.crt"
+{% endif %}
 # client_key = "/path/to/client.key"
 
 # Search user bind dn
