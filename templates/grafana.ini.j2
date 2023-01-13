@@ -35,7 +35,11 @@
 #################################### Server ####################################
 [server]
 # Protocol (http, https, h2, socket)
+{% if enable_tls | bool %}
+protocol = https
+{% else %}
 ;protocol = http
+{% endif %}
 
 # The ip address to bind to, empty will bind to all interfaces
 ;http_addr =
