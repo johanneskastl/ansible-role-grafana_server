@@ -13,3 +13,22 @@ write_ldap_toml: true
 
 #
 enable_tls: false
+
+#
+enable_ldap: false
+ldap_allow_sign_up: 'true'
+path_to_ldap_toml: '/etc/grafana/ldap.toml'
+ldap_server_use_ssl: 'false'
+ldap_server_start_tls: 'false'
+ldap_server_skip_ssl_verify: 'false'
+
+ldap_search_filter: '(cn=%s)'
+ldap_attributes_name: 'givenName'
+ldap_attributes_surname: 'sn'
+ldap_attributes_username: 'cn'
+ldap_attributes_memberof: 'memberOf'
+ldap_attributes_email: 'email'
+
+ldap_admin_group_make_grafana_admin: 'false'
+ldap_admin_group_org_id: 1
+ldap_viewer_group_dn: '*'
