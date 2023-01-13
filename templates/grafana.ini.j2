@@ -71,8 +71,13 @@ domain = {{ hostvars[inventory_hostname]['ansible_fqdn'] }}
 ;enable_gzip = false
 
 # https certs & key file
+{% if enable_tls | bool %}
+cert_file = {{ tls_certificate_crt_path }}
+cert_key = {{ tls_certificate_key_path }}
+{% else %}
 ;cert_file =
 ;cert_key =
+{% endif %}
 
 # Unix socket path
 ;socket =
