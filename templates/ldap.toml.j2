@@ -28,7 +28,11 @@ client_cert = "{{ ldap_server_client_certificate_crt_path }}"
 {% else %}
 # client_cert = "/path/to/client.crt"
 {% endif %}
+{% if ldap_server_client_certificate_key_path is defined %}
+client_key = "{{ ldap_server_client_certificate_key_path }}"
+{% else %}
 # client_key = "/path/to/client.key"
+{% endif %}
 
 # Search user bind dn
 bind_dn = "cn=admin,dc=grafana,dc=org"
