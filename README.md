@@ -14,11 +14,13 @@ Role Variables
 --------------
 
 **Default values**
+
 - `systemd_unit_name`: name of the systemd unit for the grafana server, defaults to `grafana-server.service`
 - `grafana_system_user`: name of the system user for grafana, defaults to `grafana`
 - `grafana_system_group`: name of the system group for grafana, defaults to `grafana`
 
 **Role behaviour**
+
 - `write_grafana_ini`: Boolean that decides if this roles writes the `grafana.ini` configuration file (default: `true`)
 - `write_ldap_toml`: Boolean that decides if this roles writes the `ldap.toml` configuration file (default: `true`)
 
