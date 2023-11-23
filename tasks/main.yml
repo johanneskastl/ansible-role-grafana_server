@@ -27,6 +27,7 @@
   ansible.builtin.package:
     name: "{{ grafana_package_name }}"
     state: 'present'
+    update_cache: true
 
 - name: 'Create the grafana.ini configuration file'
   ansible.builtin.template:
