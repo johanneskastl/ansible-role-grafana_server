@@ -12,3 +12,9 @@
     grafana_package_name: 'grafana'
   when:
     - 'ansible_os_family == "openSUSE MicroOS"'
+
+- name: 'Set package name on Debian'
+  ansible.builtin.set_fact:
+    grafana_package_name: 'grafana'
+  when:
+    - 'ansible_distribution == "Debian"'
